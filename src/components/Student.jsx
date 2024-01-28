@@ -10,13 +10,13 @@ function Student() {
             {
                 studentContext.map((student, index) => {
                     return (
-                        <div key={student.rollNo} className="flex gap-3 bg-orange-200">
-                            <h3>{student.rollNo} </h3>
-                            <h3>{student.name} </h3>
-                            <h3>{student.section} </h3>
-                            <h3>{student.gender} </h3>
-                            <h3>{student.age} </h3>
-                            <h3>{student.subject} </h3>
+                        <div key={student.rollNo} className="flex gap-3 p-2 bg-orange-200">
+                            <h3>Roll No: {student.rollNo} </h3>
+                            <h3>Name: {student.name} </h3>
+                            <h3> Section: {student.section} </h3>
+                            <h3>Gender: {student.gender} </h3>
+                            <h3>Age: {student.age} </h3>
+                            <h3>Subject: {student.subject} </h3>
                         </div>
                     )
                 })
