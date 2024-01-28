@@ -6,6 +6,8 @@ import { Student } from './components/Student';
 import { StudentContextProvider } from './context/StudentContext';
 import axiosInstance from './api/Product';
 import axios from 'axios'
+import Cart from './components/Cart';
+import CartContext, { CartContextProvider } from './context/CartContext';
 
 function App() {
 
@@ -14,28 +16,40 @@ function App() {
 
   const [count, setCount] = useState(0);
   const [product, setProduct] = useState([]);
+  const cartItem = useContext(CartContext);
+  console.log('Card Items: ', cartItem);
 
   useEffect(() => {
     ; (async () => {
-      const response = await axiosInstance.get('/api/v1/products');
+      const response = await axiosInstance.get('/products/all');
       console.log(response.data);
       setProduct(response?.data);
     })();
 
   }, [])
 
+  function handleClick(e) {
+    console.log(e.target.value);
+  }
 
   return (
 
+
     <>
+      <CartContextProvider>
+        <Cart />
+      </CartContextProvider>
       <h1>Product</h1>
       <div className='flex flex-wrap gap-2'>
         {
-          product?.map((product) => {
+          product?.map((product, index) => {
             return (
-              <div key={product?.id} className='mt-3'>
-                <img src={product?.images} alt="" className='w-52' />
-                <h3> T{product?.title.slice(0,20)} </h3>
+              <div key={index} className='mt-3'>
+                <img src={product?.images} alt={product?.title.slice(0, 10)} className='w-52' />
+                <h3>{product?.title.slice(0, 20)} </h3>
+                <h3>{product?.price} </h3>
+                <h3>{product?.category?.name} </h3>
+                <button onClick={handleClick} className='bg-yellow-400' value='Add to cart button'>Add to cart</button>
               </div>
             )
           })
