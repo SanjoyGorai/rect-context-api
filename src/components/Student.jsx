@@ -10,7 +10,7 @@ function Student() {
             {
                 studentContext.map((student, index) => {
                     return (
-                        <div key={student.rollNo} className="flex gap-3 p-2 bg-orange-200">
+                        <div key={student.rollNo} className="flex gap-3 p-2 rounded bg-orange-200">
                             <h3>Roll No: {student.rollNo} </h3>
                             <h3>Name: {student.name} </h3>
                             <h3> Section: {student.section} </h3>
