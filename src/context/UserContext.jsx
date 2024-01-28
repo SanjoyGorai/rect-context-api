@@ -10,11 +10,11 @@ const user = {
     relegion: 'Hinduism'
 }
 
-const UserContextProvider = (props) => {
+const UserContextProvider = (p) => {
     const [userName, setUserName] = useState("Sanjoy Gorai");
     return (
         <UserContext.Provider value={{ userName, setUserName, user }} >
-            {props.children}
+            {p.children}
         </UserContext.Provider>
     )
 }

@@ -1,7 +1,9 @@
-import { useState ,useContext} from 'react'
+import { useState, useContext } from 'react'
 import './App.css'
 import { UserContext, UserContextProvider } from './context/UserContext';
 import User from './components/User';
+import { Student } from './components/Student';
+import { StudentContextProvider } from './context/StudentContext';
 
 
 
@@ -15,10 +17,11 @@ function App() {
   return (
 
     <div>
-{/* <UserContextProvider> */}
-      <User/>
-{/* </UserContextProvider> */}
-      App
+      <h1>React JS Context API App</h1>
+      <User />
+      <StudentContextProvider>
+        <Student />
+      </StudentContextProvider>
     </div>
 
   )

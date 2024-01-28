@@ -7,7 +7,7 @@ const User = () => {
 
   return (
     <div>
-        <h1>User Componant</h1>
+        <h2>User Componant</h2>
         <h3>{user?.user?.fullName}</h3>
         <h3>{user?.user?.age}</h3>
         <h3>{user?.user?.height}</h3>
