@@ -20,9 +20,10 @@ function App() {
   const cartItems = useContext(CartContext);
   console.log('Card Item App : ', cartItems);
 
+
   useEffect(() => {
     ; (async () => {
-      const response = await axiosInstance.get('/products/all');
+      const response = await axiosInstance.get('/api/v1/products');
       console.log(response.data);
       setProduct(response?.data);
     })();
@@ -30,18 +31,16 @@ function App() {
   }, [])
 
   function handleClick(e) {
-    console.log("Click Item :", cartItems.cartItem);
-    cartItems.setCartItem( 2 )
-    console.log("Click Item :", cartItems.cartItem);
+    console.log("Before Click :", cartItems.cartItem);
+    cartItems.setCartItem(2)
+    console.log("After Item :", cartItems.cartItem);
   }
 
   return (
 
 
     <>
-      <CartContextProvider>
-        <Cart />
-      </CartContextProvider>
+      <Cart />
       <h1>Product</h1>
       <div className='flex flex-wrap gap-2'>
         {
