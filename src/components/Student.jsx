@@ -3,12 +3,22 @@ import { StudentContext } from "../context/StudentContext";
 
 function Student() {
     const studentContext = useContext(StudentContext);
-    console.log('Student Con :', studentContext);
+    // console.log('Student Context :', studentContext);
+    console.log('Student Context State', studentContext.state);
+
+    function handleClick() {
+        console.log(studentContext.state);
+        studentContext.dispatch({
+            type : 'increment_age'
+        })
+    }
+
     return (
         <div>
             <h2>Student Componant</h2>
+            <h3 className="font-bold text-red-600">Reducer State is : {studentContext.state.age} </h3>
             {
-                studentContext.map((student, index) => {
+                studentContext?.student?.map((student, index) => {
                     return (
                         <div key={student.rollNo} className="flex gap-3 p-2 rounded bg-orange-200">
                             <h3>Roll No: {student.rollNo} </h3>
@@ -21,6 +31,7 @@ function Student() {
                     )
                 })
             }
+            <button className="bg-pink-600" onClick={handleClick}>Student Button</button>
         </div>
     )
 }

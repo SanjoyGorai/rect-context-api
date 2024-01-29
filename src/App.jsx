@@ -42,6 +42,9 @@ function App() {
 
     <>
       <Cart />
+      <StudentContextProvider>
+        <Student />
+      </StudentContextProvider>
 
       <h1>Product</h1>
       <div className='flex flex-wrap gap-2'>

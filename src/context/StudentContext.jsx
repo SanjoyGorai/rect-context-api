@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 
 const StudentContext = createContext(null);
 
@@ -21,9 +21,22 @@ const student = [
     }
 ]
 
+function reducer(state, action) {
+    console.log(state);
+    if (action.type == 'increment_age') {
+        return {
+            age: state.age + 1
+        }
+    }
+    throw Error('Unknown action.');
+}
+
 function StudentContextProvider(props) {
+
+    const [state, dispatch] = useReducer(reducer, { age: 23 })
+
     return (
-        <StudentContext.Provider value={student}>
+        <StudentContext.Provider value={{ student, state, dispatch }}>
             {props.children}
         </StudentContext.Provider>
     )
