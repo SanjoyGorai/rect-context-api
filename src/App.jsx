@@ -16,8 +16,9 @@ function App() {
 
   const [count, setCount] = useState(0);
   const [product, setProduct] = useState([]);
-  const cartItem = useContext(CartContext);
-  console.log('Card Items: ', cartItem);
+
+  const cartItems = useContext(CartContext);
+  console.log('Card Item App : ', cartItems);
 
   useEffect(() => {
     ; (async () => {
@@ -29,7 +30,9 @@ function App() {
   }, [])
 
   function handleClick(e) {
-    console.log(e.target.value);
+    console.log("Click Item :", cartItems.cartItem);
+    cartItems.setCartItem( 2 )
+    console.log("Click Item :", cartItems.cartItem);
   }
 
   return (
