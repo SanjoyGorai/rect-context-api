@@ -25,18 +25,6 @@ function Student() {
 
 
         }
-
-        // if (e.target.id == 'increment_button') {
-        //     studentContext.dispatch({
-        //         type: 'increase_age'
-        //     });
-        // }
-        // if (e.target.id == 'decrement-button') {
-        //     studentContext.dispatch({
-        //         type: 'decrease_age'
-        //     });
-
-        // }
     }
 
     return (
