@@ -8,6 +8,7 @@ import axiosInstance from './api/Product';
 import Cart from './components/Cart';
 import CartContext, { CartContextProvider } from './context/CartContext';
 import noImage from '../public/no_image.jpg'
+import Bear from './components/Bear';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
 
 
     <>
+      <Bear />
       <Cart />
       <StudentContextProvider>
         <Student />
