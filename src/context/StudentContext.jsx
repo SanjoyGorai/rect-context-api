@@ -25,7 +25,7 @@ function reducer(state, action) {
     console.log(state);
 
     switch (action.type) {
-        case 'increment_age': {
+        case 'increase_age': {
             return {
                 age: state.age + 1
             }

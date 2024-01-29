@@ -8,17 +8,35 @@ function Student() {
 
     function handleClick(e) {
         console.log(studentContext.state);
-        if (e.target.id == 'ins') {
-            studentContext.dispatch({
-                type: 'increment_age'
-            });
-        }
-        if (e.target.id == 'dec') {
-            studentContext.dispatch({
-                type: 'decrease_age'
-            });
+
+        switch (e.target.id) {
+            case 'increment_button': {
+                studentContext.dispatch({
+                    type: 'increase_age'
+                });
+                console.log(e.target.id);
+            }
+            break;
+            case 'decrement-button': {
+                studentContext.dispatch({
+                    type: 'decrease_age'
+                });
+            }
+
 
         }
+
+        // if (e.target.id == 'increment_button') {
+        //     studentContext.dispatch({
+        //         type: 'increase_age'
+        //     });
+        // }
+        // if (e.target.id == 'decrement-button') {
+        //     studentContext.dispatch({
+        //         type: 'decrease_age'
+        //     });
+
+        // }
     }
 
     return (
@@ -39,8 +57,8 @@ function Student() {
                     )
                 })
             }
-            <button className="bg-pink-600 mt-2" onClick={handleClick} id="ins">Increase Age</button> <br />
-            <button className="bg-pink-600 mt-2" onClick={handleClick} id="dec">Decrese Age</button>
+            <button className="bg-pink-600 mt-2" onClick={handleClick} id="increment_button">Increase Age</button> <br />
+            <button className="bg-pink-600 mt-2" onClick={handleClick} id="decrement-button">Decrese Age</button>
         </div>
     )
 }
