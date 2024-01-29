@@ -13,12 +13,13 @@ const Bear = () => {
     }
     const bears = useBearStore((state) => state.bears);
     const increasePopulation = useBearStore((state) => state.increasePopulation);
-
+    const removeBears = useBearStore(state => state.removeBears);
     return (
-        <div>
+        <div className='m-2'>
             <h1>Bear Componant</h1>
-            <h2>{bears}</h2>
-            <button className='bg-blue-600' onClick={increasePopulation}>Bear</button>
+            <h2>Totla Bears : {bears}</h2>
+            <button className='bg-blue-600 m-2' onClick={increasePopulation}>Bear Up</button> <br />
+            <button className='bg-blue-600 m-2' onClick={removeBears}>Bear Down</button>
         </div>
     )
 }
