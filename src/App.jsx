@@ -8,6 +8,8 @@ import axiosInstance from './api/Product';
 import axios from 'axios'
 import Cart from './components/Cart';
 import CartContext, { CartContextProvider } from './context/CartContext';
+import Parent from './components/Parent';
+import Childe from './components/Child';
 
 function App() {
 
@@ -41,6 +43,9 @@ function App() {
 
     <>
       <Cart />
+      <Parent >
+        <Childe />
+      </Parent>
       <h1>Product</h1>
       <div className='flex flex-wrap gap-2'>
         {
