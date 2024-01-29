@@ -36,17 +36,6 @@ function reducer(state, action) {
             }
         }
     }
-    // if (action.type == 'increment_age') {
-    //     return {
-    //         age: state.age + 1
-    //     }
-    // }
-    // // if (action.type == 'decrease_age') {
-    //     return {
-    //         age: state.age - 1
-    //     }
-
-    // }
     throw Error('Unknown action: ' + action.type);
 }
 
