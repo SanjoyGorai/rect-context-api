@@ -28,6 +28,12 @@ function reducer(state, action) {
             age: state.age + 1
         }
     }
+    if (action.type == 'decrease_age') {
+        return {
+            age: state.age - 1
+        }
+
+    }
     throw Error('Unknown action.');
 }
 
