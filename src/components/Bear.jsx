@@ -19,10 +19,10 @@ const Bear = () => {
     return (
         <div className='m-2'>
             <h1>Bear Componant</h1>
-            <h2>Totla Bears : {bears}</h2>
-            <button className='bg-blue-600 m-2' onClick={increasePopulation}>Bear Up</button> <br />
+            <h2 className='font-bold text-xl m-2'>Totla Bears : {bears}</h2>
+            <button className='bg-green-600 m-2' onClick={increasePopulation}>Bear Up</button> 
             <button className='bg-blue-600 m-2' onClick={decresePopulation}>Bear Down</button> <br />
-            <button className='bg-blue-600 m-2' onClick={removeBears}>Bear Remove</button>
+            <button className='bg-red-600 m-2' onClick={removeBears}>Bear Remove</button>
         </div>
     )
 }
