@@ -7,7 +7,6 @@ import { StudentContextProvider } from './context/StudentContext';
 import axiosInstance from './api/Product';
 import Cart from './components/Cart';
 import CartContext, { CartContextProvider } from './context/CartContext';
-import Skeleton from '@mui/material/Skeleton';
 import noImage from '../public/no_image.jpg'
 
 function App() {
@@ -36,24 +35,13 @@ function App() {
     cartItems.setCartItem(cartItems.cartItem + 1)
     console.log("After Item :", cartItems.cartItem);
   }
-  const skeleton = <Skeleton
-    sx={{ bgcolor: 'grey.900' }}
-    variant="rectangular"
-    width={210}
-    height={118}
-  />
+
 
   return (
 
 
     <>
       <Cart />
-      <Skeleton
-        sx={{ bgcolor: 'red' }}
-        variant="rectangular"
-        width={210}
-        height={118}
-      />
 
       <h1>Product</h1>
       <div className='flex flex-wrap gap-2'>
