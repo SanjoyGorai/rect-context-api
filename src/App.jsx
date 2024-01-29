@@ -32,7 +32,7 @@ function App() {
 
   function handleClick(e) {
     console.log("Before Click :", cartItems.cartItem);
-    cartItems.setCartItem(2)
+    cartItems.setCartItem(cartItems.cartItem + 1)
     console.log("After Item :", cartItems.cartItem);
   }
 
