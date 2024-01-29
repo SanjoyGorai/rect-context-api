@@ -23,18 +23,31 @@ const student = [
 
 function reducer(state, action) {
     console.log(state);
-    if (action.type == 'increment_age') {
-        return {
-            age: state.age + 1
-        }
-    }
-    if (action.type == 'decrease_age') {
-        return {
-            age: state.age - 1
-        }
 
+    switch (action.type) {
+        case 'increment_age': {
+            return {
+                age: state.age + 1
+            }
+        }
+        case 'decrease_age': {
+            return {
+                age: state.age - 1
+            }
+        }
     }
-    throw Error('Unknown action.');
+    // if (action.type == 'increment_age') {
+    //     return {
+    //         age: state.age + 1
+    //     }
+    // }
+    // // if (action.type == 'decrease_age') {
+    //     return {
+    //         age: state.age - 1
+    //     }
+
+    // }
+    throw Error('Unknown action: ' + action.type);
 }
 
 function StudentContextProvider(props) {
