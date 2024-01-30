@@ -9,6 +9,7 @@ import Cart from './components/Cart';
 import CartContext, { CartContextProvider } from './context/CartContext';
 import noImage from '../public/no_image.jpg'
 import Bear from './components/Bear';
+import Example from './components/Example';
 
 function App() {
 
@@ -22,14 +23,14 @@ function App() {
   console.log('Card Item App : ', cartItems);
 
 
-  useEffect(() => {
-    ; (async () => {
-      const response = await axiosInstance.get('/api/v1/products');
-      console.log(response.data);
-      setProduct(response?.data);
-    })();
+  // useEffect(() => {
+  //   ; (async () => {
+  //     const response = await axiosInstance.get('/api/v1/products');
+  //     console.log(response.data);
+  //     setProduct(response?.data);
+  //   })();
 
-  }, [])
+  // }, [])
 
   function handleClick(e) {
     console.log("Before Click :", cartItems.cartItem);
@@ -42,14 +43,15 @@ function App() {
 
 
     <>
-      <Bear />
-      <Cart />
-      <StudentContextProvider>
-        <Student />
-      </StudentContextProvider>
+    <Example/>
+      {/* <Bear /> */}
+      {/* <Cart /> */}
+      {/* <StudentContextProvider> */}
+        {/* <Student /> */}
+      {/* </StudentContextProvider> */}
 
-      <h1>Product</h1>
-      <div className='flex flex-wrap gap-2'>
+      {/* <h1>Product</h1> */}
+      {/* <div className='flex flex-wrap gap-2'>
         {
           product?.map((product, index) => {
             return (
@@ -63,7 +65,7 @@ function App() {
             )
           })
         }
-      </div>
+      </div> */}
 
 
       {/* <div>
