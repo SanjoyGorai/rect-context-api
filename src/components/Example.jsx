@@ -10,12 +10,10 @@ const Example = () => {
     function handleClick(e) {
         switch (e.target.id) {
             case 'inc': {
-                console.log(e.target.id);
                 dispatch(increment());
             }
                 break;
             case 'dec': {
-                console.log(e.target.id);
                 dispatch(decrement())
             }
                 break;
