@@ -33,7 +33,7 @@ const Example = () => {
             <div>
                 {
                     error ? (
-                        <>Oh no there was an error...</>
+                        <>Oh no there was an error</>
                     ) : isLoading ? (
                         <>Loading</>
                     ) : data ? (
