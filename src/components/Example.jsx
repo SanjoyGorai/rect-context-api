@@ -1,11 +1,14 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment } from '../features/counter/counterSlice';
+import { useGetPokemonByNameQuery } from '../services/pokemon';
 
 const Example = () => {
 
     const count = useSelector(state => state.counter.value);
     const dispatch = useDispatch();
+
+    const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
 
     function handleClick(e) {
         switch (e.target.id) {
@@ -26,6 +29,34 @@ const Example = () => {
             <h1 className='text-blue-800 p-5'>Example Componant fro Redux Toolkit</h1>
             <button onClick={handleClick} id='inc' className='m-2 bg-green-600'>Inc </button>
             <button onClick={handleClick} id='dec' className='m-2 bg-orange-600'>Dec </button>
+
+            <div>
+                {
+                    error ? (
+                        <>Oh no error...</>
+                    ) : isLoading ? (
+                        <>Loading</>
+                    ) : data ? (
+                        <>
+                            <>{data.species.name} </>
+                            <><img src={data.sprites.front_shiny} alt="shiny" /></>
+                        </>
+                    ) : null
+                }
+
+                {error ? (
+                    <>Oh no, there was an error</>
+                ) : isLoading ? (
+                    <>Loading...</>
+                ) : data ? (
+                    <>
+                        <h3>{data.species.name}</h3>
+                        <img src={data.sprites.front_shiny} alt='shiney' />
+                    </>
+                ) : null}
+
+            </div>
+
         </div>
     )
 }
